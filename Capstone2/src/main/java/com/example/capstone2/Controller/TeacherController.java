@@ -99,4 +99,9 @@ public class TeacherController {
     public ResponseEntity getApplicationComment(@PathVariable int teacherid) {
         return ResponseEntity.status(200).body(teacherService.application_Comments(teacherid));
     }
+
+     @GetMapping("/display-balance/{teacherid}")
+    public ResponseEntity displayBalance(@PathVariable int teacherid){
+     return ResponseEntity.status(200).body(teacherService.displayBalance(teacherid));
+    }
 }
