@@ -205,5 +205,13 @@ public class TeacherService {
         }
         return ct;
     }
+        //teacher can display the historical balance
+        public List<Teacher_Balance> displayBalance(int teacher_id){
+        List<Teacher_Balance> tb = teacher_BalanceRepository.findBalanceByTeacherId(teacher_id);
+        if (tb.isEmpty()){
+            throw new ApiException("Teacher Balance is empty");
+        }
+        return tb;
+    }
 
 }
